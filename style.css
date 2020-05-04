@@ -1,0 +1,176 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-size: 14px;
+	font-family: Consolas;
+}
+
+/* css của mấy thứ vớ vẩn */
+.khungMenuDuoi{
+	width: 100%;
+	height: 50px;
+	margin-top: 62px;
+	background-color: #cccccc;
+	margin-bottom: 8px;
+	border: 1px solid red;
+}
+
+.menuDuoi{
+	width: 1284px;
+	height: 50px;
+	background-color: #cccccc;
+	margin: 0 auto;
+}
+
+.danhMucNoiBat{
+	width: 183px;
+	height: 50px;
+	background-color: #cccccc;
+	margin-left: 16px;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+	margin-right: 70px;
+	border-radius: 10px;
+	border: 1px solid red;
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.danhMucNoiBat:hover {
+	background: floralwhite;
+	font-size: 18px;
+}
+
+.danhMucNoiBat a {
+	text-decoration: none;
+	color: red;
+}
+
+.hangSanXuat div{
+	float: left;
+	width: 120px;
+	height: 35px;
+	text-align: center;
+	line-height: 30px;
+	margin-right: 25px;
+	background-color: #ffffff;
+	margin-top: 7px;
+	border: 2px solid grey;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.hangSanXuat div:hover {
+	border: 1px solid grey;
+}
+
+.hangSanXuat div:hover a {
+	color: red;
+	font-size: 18px;
+}
+
+.hangSanXuat a {
+	text-decoration: none;
+	color: black;
+}
+
+/* css của sản phẩm */
+
+.khungChuaSanPham {
+	width: 1284px;
+	margin: 0 auto;
+}
+
+.khungSanPham{
+	width: 253px;
+	height: 370px;
+	background-color: #ffffff;
+	float: left;
+	margin-left: 2px;
+	margin-right: 1px;
+	margin-top: 10px;
+    box-shadow: 0 0 2px black;
+    border-radius: 10px;
+}
+
+.khungSanPham:hover {
+    border: 1px solid blue;
+}
+
+.sanPham {
+	width: 240px;
+	height: 240px;
+	background-color: #ffffff;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.sanPham img {
+	margin: 10px 10px;
+}
+
+.tenSanPham{
+	width: 240px;
+	height: 20px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 10px;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.giaGoc{
+	text-decoration: line-through;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+	color: black;
+	float: left;
+	margin-left: 10%;
+}
+
+.phanTramGiamGia{
+	color: red;
+	font-weight: 700;
+	float: right;
+	margin-right: 10%;
+}
+
+.giaSauKhiGiam{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: royalblue;
+}
+
+.bnt{
+    width: 80%;
+    margin-top: 5px;
+    margin-left: 11%;
+    padding: 6px 10px;
+    border-radius: 15px;
+    background-color: coral;
+    color: white;
+}
+
+.bnt:hover {
+    background-color: darkblue;
+}
+
+.test {
+	width: 200px;
+	height: 1000px;
+	background-color: aqua;
+}
+
+/* my name is KIym */
+
+
+
+
+/* sesdfsdkjfshdc skjdfh sdjkfhs kdfsdkjfds */

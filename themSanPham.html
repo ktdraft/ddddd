@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm mới sản phẩm</title>
+    <link rel="stylesheet" href="index.html">
+    <script src="UUID.js"></script>
+    <script src="sanPham.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .themSanPham {
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid black;
+            box-shadow: 1px 2px 4px #ddd;
+            padding: 40px;
+        }
+
+        .themSanPham label {
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            line-height: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .themSanPham input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .themSanPham .bnt {
+            padding: 10px 20px;
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="head" style="width: 100%; height: 100px; background-color: black;margin-bottom: 20px;">
+            <p><a href="index.html"><img src="images/Icontt.png" alt="" style="width: 3%; margin: 30px 20px;"></a></p>
+        </div>
+        <div class="slider"
+            style="width: 80%; height: 300px; background-color: black; margin: 0 auto; margin-bottom: 20px;">
+            <p style="text-align: center; color: white; line-height: 300px;">Đây là slider</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="themSanPham">
+            <label for="" style="text-align: center; font-weight: 700; color: red; font-size: 20px;">Thêm sản phẩm</label>
+            <label for="hinhAnh">Hình ảnh sản phẩm</label>
+            <input type="text" name="" id="hinhAnh">
+
+            <label for="ten">Tên sản phẩm</label>
+            <input type="text" id="ten">
+
+            <label for="giaGoc">Giá gốc</label>
+            <input type="number" id="giaGoc">
+
+            <label for="phanTramGiamGia">Giảm giá (0- 100)%</label>
+            <input type="number" id="phanTramGiamGia">
+
+            <label for="khuVucBan">Khu vực bán</label>
+            <input type="text" id="khuVucBan">
+            <button class="bnt" onclick="createProduct() , thongBao()">Tạo sản phẩm</button>
+        </div>
+    </section>
+    <footer>
+        <div class="footer" style="width: 100%; height: 100px; background-color: black; margin-top: 100px;">
+            <p style="text-align: center; color: white; line-height: 100px;">Đây là Footer</p>
+        </div>
+    </footer>
+
+
+    <script>
+        function createProduct() {
+            var product = getInforFromInput();
+
+            // b3: lấy danh sách từ Local Storage
+            var listProducts = JSON.parse(localStorage.getItem('danhSachSanPham'));
+            // b4: đưa thêm sản phẩm vào danh sách
+            listProducts.push(product);
+            // b5: cập nhật lại danh sách vào Local Strorage
+            var jsonListProducts = JSON.stringify(listProducts);
+            localStorage.setItem('danhSachSanPham', jsonListProducts);
+        }
+
+        function thongBao() {
+            alert('Thêm sản phẩm thành công! ahihi');
+        }
+
+        function getInforFromInput() {
+            // b1: truy cập các node input để lấy thông tin sản phẩm
+            var nodeHinhAnh = document.getElementById('hinhAnh')
+            var hinhAnh = nodeHinhAnh.value;
+            console.log(hinhAnh);
+            nodeHinhAnh.value = '';
+
+            var nodeTen = document.getElementById('ten');
+            var ten = nodeTen.value;
+            console.log(ten);
+            nodeTen.value = '';
+
+            var nodeGiaGoc = document.getElementById('giaGoc');
+            var giaGoc = nodeGiaGoc.value;
+            console.log(giaGoc);
+            nodeGiaGoc.value = '';
+
+            var nodePhanTramGiamGia = document.getElementById('phanTramGiamGia');
+            var phanTramGiamGia = nodePhanTramGiamGia.value;
+            console.log(phanTramGiamGia);
+            nodePhanTramGiamGia.value = '';
+
+            var nodeKhuVucBan = document.getElementById('khuVucBan');
+            var khuVucBan = nodeKhuVucBan.value;
+            console.log(khuVucBan);
+            nodeKhuVucBan.value = '';
+
+            // b2: tạo ra các đối tượng thuộc tính
+            var product = newSmartPhone(ten, hinhAnh, giaGoc, phanTramGiamGia, khuVucBan, UUID());
+            return product;
+        }
+
+    </script>
+</body>
+
+</html>

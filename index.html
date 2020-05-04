@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themSanPham.html">
+    <link rel="stylesheet" href="showItems.html">
+    <script src="sanPham.js"></script>
+    <script src="gioHang.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="head" style="background-color: black; width: 100%; height: 100px;">
+            <div>
+                <a href="showItems.html" style="color: aliceblue; text-decoration: none; line-height: 50px;">
+                    <img src="images/giohang.png" alt="" style="margin: 30px 20px;">
+                </a>
+                <a href="themSanPham.html" style="color: aliceblue; text-decoration: none; line-height: 50px;">
+                    <img src="images/edit.png" alt="" style="width: 2.7%; margin-bottom: 27px">
+                </a>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="khungMenuDuoi">
+            <div class="menuDuoi">
+                <div class="danhMucNoiBat">
+                    <a href="#"><b><i>Smart Phone</i></b></a>
+                </div>
+                <div class="hangSanXuat">
+                    <div><a href="#"><i>Samsung</i></a></div>
+                    <div><a href="#"><i>Appple</i></a></div>
+                    <div><a href="#"><i>Huawei</i></a></div>
+                    <div><a href="#"><i>Xiao Mi</i></a></div>
+                    <div><a href="#"><i>OPPO</i></a></div>
+                    <div><a href="#"><i>Vivo</i></a></div>
+                    <div><a href="#"><i>LG</i></a></div>
+                </div>
+            </div>
+        </div>
+        <div id="hienThiSanPham" class="khungChuaSanPham">
+            <!-- do something -->
+        </div>
+    </section>
+    <!-- <footer>
+        <div class="head" style="background-color: black; width: 100%; height: 100px;">
+          Đây là giỏ footer nha ádasdadasdasdsa
+        </div>
+    </footer> -->
+    <script>
+        // b1.1: tạo ra object và lưu xướng localStorage
+        if (localStorage.getItem('danhSachSanPham') == null || localStorage.getItem('danhSachSanPham') == '') {
+            var listProducts = createListProducts();
+            jsonListProducts = JSON.stringify(listProducts);
+            localStorage.setItem('danhSachSanPham', jsonListProducts);
+        }
+
+        // b1.2: nếu đã có json dưới localStorage thì lấy lên và chuyển thành object
+        var jsonListProducts = localStorage.getItem('danhSachSanPham');
+        var listProducts = newSmartPhone().fromJSONS(jsonListProducts);
+
+        // b2: chuyển đổi đối tượng thành HTML
+        var html = chuyenDSSanPhamThanhHTML(listProducts);
+        console.log(listProducts);
+
+        // b3: gắn HTML vào node
+        var nodeHienThiSanPham = document.getElementById('hienThiSanPham');
+        nodeHienThiSanPham.innerHTML = html;
+
+        function themVaoGioHang(idSanPham) {
+            alert('ok đã thêm! ' + idSanPham);
+
+            var listItems = getListItemsFromLocal();
+            var confirm = false;
+
+            for (var i = 0; i < listItems.length; i++) {
+                var thisItem = listItems[i];
+                if (thisItem.ID == idSanPham) {
+                    listItems[i].soLuong++;
+                    confirm = true;
+                    break;
+                }
+            }
+
+            if (confirm == false) {
+                var item = createItem(idSanPham, 1);
+                listItems.push(item);
+            }
+            saveListItemsToLocal(listItems);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.html">
+    <script src="gioHang.js"></script>
+    <script src="sanPham.js"></script>
+    <script src="item.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .khungTo {
+            min-height: 600px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            width: 80%;
+            height: 30px;
+            display: flex;
+            margin: 0 auto;
+            border-bottom: 1px solid black;
+        }
+
+        .title .hinh {
+            width: 10%;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .title .ten {
+            width: 170px;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .title .gia {
+            width: 100px;
+            text-align: center;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .title .so {
+            width: 100px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .title .tien {
+            width: 200px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+
+        .khungDanhSachItem {
+            width: 80%;
+            height: 100px;
+            background-color: burlywood;
+            margin: 0 auto;
+        }
+
+        .khungItem {
+            width: 100%;
+            height: 100px;
+            background-color: blanchedalmond;
+            margin-top: 10px;
+            border-bottom: 1px solid red;
+            display: flex;
+        }
+
+        .hinhAnhItem {
+            width: 10%;
+            height: 100px;
+            margin-right: 10px;
+        }
+
+        .hinhAnhItem img {
+            width: 60%;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+
+        .tenItem {
+            width: 170px;
+            height: 100px;
+            margin-right: 10px;
+            line-height: 100px;
+        }
+
+        .GiaItem {
+            margin-right: 10px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+        }
+
+        .soLuongItem {
+            width: 100px;
+            height: 100px;
+            margin-right: 50px;
+        }
+
+        .soLuong {
+            margin-top: 40px;
+            width: 100px;
+        }
+
+        .thanhTien {
+            margin-top: 40px;
+            width: 200px;
+            height: 100px;
+        }
+
+        .bnt {
+            width: 100px;
+            height: 30px;
+            margin-top: 35px;
+            background-color: blanchedalmond;
+            border: none;
+            outline: none;
+        }
+
+        .bnt img {
+            width: 30%;
+
+        }
+
+        .dang-ki-mua-hang {
+            width: 60%;
+            min-height: 300px;
+            background-color: blanchedalmond;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .khung-dang-ki {
+            width: 80%;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        #title-dang-ki {
+            font-size: 20px;
+            font-weight: 700;
+            color: red;
+            margin-left: 250px;
+        }
+
+        .khung-dang-ki input {
+            width: 100%;
+            height: 35px;
+            margin-bottom: 10px;
+        }
+
+        .khung-dang-ki #mua-hang {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body onload="showItems()">
+    <header>
+        <div class="head" style="width: 100%; height: 100px; background-color: black;margin-bottom: 20px;">
+            <p><a href="index.html"><img src="images/Icontt.png" alt="" style="width: 3%; margin: 30px 20px;"></a></p>
+        </div>
+        <div class="slider"
+            style="width: 80%; height: 300px; background-color: black; margin: 0 auto; margin-bottom: 200px;">
+            <p style="text-align: center; color: white; line-height: 300px;">Đây là slider</p>
+        </div>
+    </header>
+    <section>
+        <div class="khungTo">
+            <div class="title">
+                <div class="hinh">
+                    Hình ảnh
+                </div>
+                <div class="ten">
+                    Tên sản phẩm
+                </div>
+                <div class="gia">
+                    Giá bán
+                </div>
+                <div class="so">
+                    Số lượng
+                </div>
+                <div class="tien">
+                    Thành tiền
+                </div>
+            </div>
+            <div class="" id="hienThiDanhSachSanPham">
+
+            </div>
+        </div>
+        <div class="dang-ki-mua-hang">
+            <div class="khung-dang-ki">
+                <div id="title-dang-ki">
+                    Đăng kí mua hàng
+                </div>
+                <div id="ten">
+                    <input type="text" placeholder="Nhập tên">
+                </div>
+                <div id="sdt">
+                    <input type="number" placeholder="Nhập số điện thoại">
+                </div>
+                <div id="adr">
+                    <input type="text" placeholder="Nhập địa chỉ">
+                </div>
+                <div>
+                    <input type="text" placeholder="Nhập ghi chú">
+                </div>
+                <input type="submit" id="mua-hang" value="Mua hàng">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer" style="width: 100%; height: 100px; background-color: black;">
+            <p style="text-align: center; color: white; line-height: 100px;">Đây là Footer</p>
+        </div>
+    </footer>
+    <script>
+        function showItems() {
+            var html = chuyenDSItemThanhHtml(getLisItemsFromLocal());
+
+            var nodeHienThiSanPham = document.getElementById('hienThiDanhSachSanPham');
+            nodeHienThiSanPham.innerHTML = html;
+        }
+
+    </script>
+</body>
+
+</html>
